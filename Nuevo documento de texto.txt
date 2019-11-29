@@ -32,4 +32,39 @@ fdisk /dev/sdc
 pvcreate /dev/sdc3
 history >> archivohistorial.txt
 
+----------------------------------------------------------------------------------------------
+  107  groupadd simulacro
+  108  useradd desarrollo -g simulacro -m
+  109  useradd diseño -g simulacro -m
+  110  useradd jefe -g simulacro -m
+  111  cat /dev/passwd
+  112  cat /etc/passwd
+  113  passwd desarrollo 
+  114  passwd diseño
+  115  passwd jefe
+  116  mkdir /home/desarrollo/disco1
+  117  tree /home/desarrollo/
+  118  ls /home/desarrollo/
+  119  tree /home
+  120  apk install tree
+  121  install tree
+  122  apt install tree
+  123  tree /home/desarrollo/
+  124  mount /dev/mapper/prueba-lv1 /home/desarrollo/disco1/
+  125  tree /home/desarrollo/
+  126  df -h
+  127  exit
+  128  clear
+  129  groupadd man
+  130  man groupadd
+  131  rm
+  132  useradd examne
+  133  useradd examen
+  134  usermod -G examen jefe
+  135  usermod -G examen desarrolo
+  136  usermod -G examen desarrollo
+  137  login jefe
+  138  history >> /home/alvaro/historial.txt
+  139  history >> /home/alvaro/Desktop/historial.txt
+
 
