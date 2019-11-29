@@ -1,3 +1,25 @@
+fdisck /dev/sdb1
+n t 8e w
+pvcreate /dev/sdb1
+pvs
+vgcreate vg1 /dev/sdb1
+vgcreate vg2 /dev/sdc1
+
+lvcreate -l +100%free -n lv1 vg1
+lvcreate -l +100%free -n lv2 vg2
+mkfs.ext4 /dev/mapper/vg1-lv1
+mkfs.ext4 /dev/mapper/vg2-lv2
+
+vgextend vg2 /dev/sdc2 //extiendo vg
+
+lvextend -L +1GB /dev/mapper/vg2-lv2
+rezise2fs /dev/mapper/vg2-lv2
+lsblk
+
+
+
+
+
 virtual disck image
 disco fijo
 fdisck /dev/sdb
