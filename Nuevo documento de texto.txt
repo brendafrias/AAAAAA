@@ -1,0 +1,35 @@
+virtual disck image
+disco fijo
+fdisck /dev/sdb
+n t8e w
+fdisck /dev/sdc
+n t 8e w
+
+lsblk
+
+pvcreate /dev/sdc1
+pvcreate /dev/sdb1
+vgcreate vgDesarrollo /dev/sdc1
+
+lvcreate -l +100%free lvDesarrollo vgDesarrollo
+mkfs.ext4 /dev/mapper/vgDesarrollo-lvDesarrollo
+sudo groupadd simulacreo
+
+cat /ect/group
+
+useradd -g 1001 -m -s /bin/bash desarrollo
+sudo psswd desarrollo
+chown desarrollo /home/desarrollo
+mount /dev/mapper/vgDesarrollo-lvDesarrollo /home/desarrollo
+login desarrollo
+
+groupadd examen
+
+usermod desarrollo -G examen
+usermod director -G examen
+cat /etc/passwd
+fdisk /dev/sdc
+pvcreate /dev/sdc3
+history >> archivohistorial.txt
+
+
